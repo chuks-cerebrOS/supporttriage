@@ -1,0 +1,42 @@
+[
+  {
+    "id": "T-48213",
+    "subject": "429 errors during peak batch job",
+    "customer": "Northwind Data",
+    "tier": "enterprise",
+    "body": "Our production batch pipeline started returning HTTP 429 during our 9am peak. We're sending ~400 requests in a burst every 5 minutes. It worked fine last week. This is blocking our nightly reports from publishing on time.",
+    "repro_cmd": "echo '429 Too Many Requests — rate limit on key during burst'"
+  },
+  {
+    "id": "T-48216",
+    "subject": "Responses cut off mid-stream",
+    "customer": "Aperture Labs",
+    "tier": "enterprise",
+    "body": "When we enable streaming, about 10% of responses truncate partway through and the connection drops. Non-streaming calls to the same model complete fine. Started after we moved our gateway behind a new proxy.",
+    "repro_cmd": ""
+  },
+  {
+    "id": "T-48201",
+    "subject": "401 after rotating API key",
+    "customer": "Meridian AI",
+    "tier": "enterprise",
+    "body": "We rotated our API key last night per our security policy. Now every request returns 401 Unauthorized. We updated the key in our vault. Production is down.",
+    "repro_cmd": "echo 'HTTP/1.1 401 Unauthorized — invalid or missing bearer token'"
+  },
+  {
+    "id": "T-48188",
+    "subject": "Which model is cheapest for our classification workload?",
+    "customer": "Bluewave",
+    "tier": "enterprise",
+    "body": "We run ~2M short classification calls a day. We're on a premium model and our costs jumped. Can you advise on routing to something cheaper without hurting accuracy?",
+    "repro_cmd": ""
+  },
+  {
+    "id": "T-48170",
+    "subject": "One provider returning 503, others fine",
+    "customer": "Cobalt Systems",
+    "tier": "enterprise",
+    "body": "Our calls to a specific model are intermittently failing with 503. We don't have fallback configured. This is affecting our customer-facing chatbot during business hours.",
+    "repro_cmd": "echo 'HTTP/1.1 503 Service Unavailable — upstream provider error'"
+  }
+]
